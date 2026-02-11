@@ -3,4 +3,5 @@ numpy
 plotly
 streamlit
 streamlit_extras
+altair<5
 protobuf==3.20.3
