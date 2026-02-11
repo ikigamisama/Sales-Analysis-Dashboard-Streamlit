@@ -78,14 +78,6 @@ with cols[4]:
     )
 
 
-style_metric_cards(
-    background_color="transparent",
-    border_size_px=0,
-    border_radius_px=12,
-    border_left_color="#6366f1",
-    box_shadow=True
-)
-
 st.plotly_chart(c.us_map_reveue(year, month, region, channel), width='stretch',
                 config={'displayModeBar': False})
 
