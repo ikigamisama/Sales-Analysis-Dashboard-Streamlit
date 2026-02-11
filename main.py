@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_extras.metric_cards import style_metric_cards
 from components import Chart
 
 st.set_page_config(
