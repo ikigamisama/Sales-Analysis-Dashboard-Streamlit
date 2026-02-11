@@ -7,6 +7,21 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown(
+    """
+    <style>
+        div[data-testid="stMetric"] {
+            border-left: 0.5rem solid #6366f1 !important;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+            padding: 5% 5% 5% 10% !important;
+            border-radius: 12px !important;
+            background-color: transparent !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.header("📊 Sales Analysis")
 st.caption("Acme Corporation — performance, trends, and revenue insights")
 
@@ -29,15 +44,39 @@ total_revenue, total_profit, profit_margin, total_orders, revenue_per_order = c.
 cols = st.columns(5, gap="small")
 
 with cols[0]:
-    st.metric("💰 Total Revenue", f"${total_revenue:,.0f}")
+    st.metric(
+        "💰 Total Revenue",
+        f"${total_revenue:,.0f}",
+        border=True
+    )
+
 with cols[1]:
-    st.metric("📈 Total Profit", f"${total_profit:,.0f}")
+    st.metric(
+        "📈 Total Profit",
+        f"${total_profit:,.0f}",
+        border=True
+    )
+
 with cols[2]:
-    st.metric("📊 Profit Margin", f"{profit_margin:,.1f}%")
+    st.metric(
+        "📊 Profit Margin",
+        f"{profit_margin:,.1f}%",
+        border=True
+    )
+
 with cols[3]:
-    st.metric("🛒 Total Orders", f"{total_orders:,}")
+    st.metric(
+        "🛒 Total Orders",
+        f"{total_orders:,}",
+        border=True
+    )
+
 with cols[4]:
-    st.metric("🤑 Rev / Order", f"${revenue_per_order:,.0f}")
+    st.metric(
+        "🤑 Rev / Order",
+        f"${revenue_per_order:,.0f}",
+        border=True
+    )
 
 
 style_metric_cards(
